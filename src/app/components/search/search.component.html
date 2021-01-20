@@ -1,0 +1,4 @@
+<div id="search-field">
+    <input (keyup)="applyFilter($event)" placeholder="Search User" />
+</div>
+<p id="answer" *ngIf = "sharedService.selectedUser">You have selected {{ sharedService.selectedUser }} </p>

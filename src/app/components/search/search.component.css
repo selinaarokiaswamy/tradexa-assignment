@@ -1,0 +1,15 @@
+#search-field{
+    padding: 2vh 0vh 0vh 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#answer{
+    color: darkred;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

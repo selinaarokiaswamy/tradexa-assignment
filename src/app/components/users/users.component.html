@@ -1,0 +1,41 @@
+<!-- <ul>
+    <li *ngFor="let user of usersList | async">
+      {{ user.id }}. {{ user.name }}
+      {{ user.username }}. {{ user.email }}
+    </li>
+  </ul> -->
+
+<table class="table-style" *ngIf = "sharedService.filteredUsers | async as filteredUsers">
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Location</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+    </tr>
+    <tr *ngFor="let user of filteredUsers" (click) = "selectUser(user.name)">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            {{ user.address.street }}, 
+            {{ user.address.suite }}, 
+            {{ user.address.city }} - {{ user.address.zipcode }}
+        </td>
+        <td>
+            Latitude : {{ user.address.geo.lat }}, 
+            Longitude : {{ user.address.geo.lng }}, 
+        </td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.website }}</td>
+        <td>
+            {{ user.company.name }} -- {{ user.company.catchPhrase }}
+        </td>
+
+    </tr>
+</table>
+
+<!-- <ng-template #showloading=""><div>Loading..</div></ng-template> -->
